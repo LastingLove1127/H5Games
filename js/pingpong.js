@@ -1,33 +1,3 @@
-// var KEY={
-// 	UP:38,
-// 	DOWN:40,
-// 	W:87,
-// 	S:83
-// }
-// $(function(){
-// 	$('#paddleB').css('top','20px');
-// 	$('#paddleA').css('top','60px');
-// 	$(document).keydown(function(e){
-// 		switch(e.which){
-// 			case KEY.UP:
-// 				var top=parseInt($("#paddleB").css('top'));
-// 				$("#paddleB").css("top",top-5);
-// 				break;
-// 			case KEY.DOWN:
-// 				var top=parseInt($("#paddleB").css('top'));
-// 				$("#paddleB").css("top",top+5);
-// 				break;
-// 			case KEY.W:
-// 				var top=parseInt($("#paddleA").css('top'));
-// 				$("#paddleA").css("top",top-5);
-// 				break;
-// 			case KEY.S:
-// 				var top=parseInt($("#paddleA").css('top'));
-// 				$("#paddleA").css("top",top+5);
-// 				break;
-// 		}
-// 	});
-// })
 var KEY = {
 	UP: 38,
 	DOWN: 40,
@@ -62,6 +32,21 @@ $(function() {
 function loopGame() {
 	moveBall();
 	movePaddles();
+}
+
+function initGame(){
+	/**
+	 * 1.初始化小球的位置
+	 * 2.初始化比分
+	 */
+	var ball=pingpong.ball;
+	$("#ball").css({
+		"left":ball.x,
+		"top":ball.y,
+	})
+	var score=pingpong.score;
+	$("#scoreA").html(score.scoreA);
+	$("#scoreB").html(score.scoreB);
 }
 
 function movePaddles() {
@@ -184,6 +169,10 @@ $("#play").click(function() {
 	 * 1.先清除定时器(避免定时器累加)
 	 * 2.让球和球拍动起来
 	 */
+	initGame();
+	var ballSpeed=$(".ballSpeed").val();
+	var ball=pingpong.ball;
+	ball.speed=ballSpeed;
 	clearInterval(pingpong.timer);
 	pingpong.timer = setInterval(loopGame, 30);
 	$("#play").attr("disabled", true);
@@ -207,15 +196,37 @@ $("#reset").click(function() {
 	/**
 	 * 1.把球复位
 	 * 2.清除计时器
-	 * 3.恢复开始的背景色
+	 * 3.恢复开始按钮的背景色
 	 * 4.重置比分
+	 * 5.重置球拍的位置
 	 */
-	$("#scoreA").html(0);
-	$("#scoreB").html(0);
+	var ball=pingpong.ball;
+	var paddleA=$("#paddleA");
+	var paddleB=$("#paddleB");
+	paddleA.css({
+		"left":"80px",
+		"top":"50px"
+	});
+
+	paddleB.css({
+		"left":"680px",
+		"top":"50px"
+	})
+
+	ball.x=250;
+	ball.y=100;
+	ball.speed=0;
+	var score=pingpong.score;
+	score.scoreA=0;
+	score.scoreB=0;
+	$("#scoreA").html(score.scoreA);
+	$("#scoreB").html(score.scoreB);
 	clearInterval(pingpong.timer);
 	$("#ball").css({
-		"left": 250,
-		"top": 100
+		"left": ball.x,
+		"top": ball.y
 	});
 	$("#play").attr("disabled", false);
+	$("#pause").html("暂停");
+	$("#pause").css("color", "black");
 })
