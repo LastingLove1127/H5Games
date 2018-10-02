@@ -1,0 +1,69 @@
+#game{
+	background: #9c9;
+	padding: 5px;
+}
+.card{
+	width: 105px;
+	height: 150px;
+	-webkit-perspective: 3000;
+	   -moz-perspective: 3000;
+	        perspective: 3000;
+	margin-top: 10px;
+	border: 1px solid blueviolet;
+}
+.face{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-moz-border-radius: 10px;
+	     border-radius: 10px;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	transition: all 1s;
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	        backface-visibility: hidden;
+}
+
+.front{
+	z-index: 10;
+	background-image: url('../images/bg.jpg');
+}
+.back{
+	-webkit-transform: rotate3d(0, 1, 0, -180deg);
+	   -moz-transform: rotate3d(0, 1, 0, -180deg);
+	        transform: rotate3d(0, 1, 0, -180deg);
+	z-index: 8;
+}
+.card-flipped .front{
+	-webkit-transform: rotate3d(0, 1, 0, 180deg);
+	   -moz-transform: rotate3d(0, 1, 0, 180deg);
+	        transform: rotate3d(0, 1, 0, 180deg);
+	z-index: 8;
+}
+.card-flipped .back{
+	-webkit-transform: rotate3d(0, 1, 0, 0deg);
+	   -moz-transform: rotate3d(0, 1, 0, 0deg);
+	        transform: rotate3d(0, 1, 0, 0deg);
+	z-index: 10;
+}
+.cardAJ{
+	background: url('../images/AJ.jpg');
+}
+.cardAQ{
+	background: url('../images/AQ.jpg');
+}
+.cardAK{
+	background: url('../images/AK.jpg');
+}
+
+
+button{
+	width: 100px;
+	height: 40px;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 40px;
+	text-align: center;
+	margin: 5px;
+}

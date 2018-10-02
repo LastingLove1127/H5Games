@@ -3,35 +3,43 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Poker 扑克牌游戏</title>
-	<link rel="stylesheet" href="../css/transition.css">
+	<!-- <link rel="stylesheet" href="../css/transition.css"> -->
+	<link rel="stylesheet" href="../css/flip.css">
 	<script src="../js/jQuery.min.js"></script>
 </head>
 <body>
 	<div id="container">
 		<h2>这是一个H5游戏--poker</h2>
 	</div>
-	<div id="game">
-		<div class="card cardAJ"></div>
-		<div class="card cardAQ"></div>
-		<div class="card cardAK"></div>
-	</div>
 	<div id="contral">
 		<button id="transX">X轴翻转</button>
 		<button id="transY">Y轴翻转</button>
 		<button id="transZ">Z轴翻转</button>
 	</div>
+	<div class="classsss"></div>
+	<section id="game">
+		<div id="cards">
+			<div class="card">
+				<div class="face front"></div>
+				<div class="face back cardAJ"></div>
+			</div>
+			<div class="card">
+				<div class="face front"></div>
+				<div class="face back cardAQ"></div>
+			</div>
+			<div class="card">
+				<div class="face front"></div>
+				<div class="face back cardAK"></div>
+			</div>
+		</div>		
+	</section>
+	
 	<script>
 		$(function(){
-			$("#transX").click(function(){
-				$(".cardAJ").addClass("transX");
-			})
-
-			$("#transY").click(function(){
-				$(".cardAQ").addClass("transY");
-			})
-
-			$("#transZ").click(function(){
-				$(".cardAK").addClass("transZ");
+			$("#cards").children().each(function(index){
+				$(this).click(function(){
+					$(this).toggleClass("card-flipped");
+				})
 			})
 		})
 	</script>

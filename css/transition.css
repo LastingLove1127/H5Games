@@ -36,18 +36,31 @@ button{
 	line-height: 40px;
 	font-size: 20px;
 	color: black;
-	border-radius: 5px;
+	-moz-border-radius: 5px;
+	     border-radius: 5px;
 	margin: 0 5px;
 }
 .transX{
+	-webkit-transition: all 2s;
+	-moz-transition: all 2s;
 	transition: all 2s;
-	transform: rotate3d(1, 0, 0, 60deg);
+	-webkit-transform: rotate3d(1, 0, 0, 60deg);
+	   -moz-transform: rotate3d(1, 0, 0, 60deg);
+	        transform: rotate3d(1, 0, 0, 60deg);
 }
 .transY{
+	-webkit-transition: all 2s;
+	-moz-transition: all 2s;
 	transition: all 2s;
-	transform: rotate3d(0, 1, 0, 60deg);
+	-webkit-transform: rotate3d(0, 1, 0, 60deg);
+	   -moz-transform: rotate3d(0, 1, 0, 60deg);
+	        transform: rotate3d(0, 1, 0, 60deg);
 }
 .transZ{
+	-webkit-transition: all 2s;
+	-moz-transition: all 2s;
 	transition: all 2s;
-	transform: rotate3d(0, 0, 1, 60deg);
+	-webkit-transform: rotate3d(0, 0, 1, 60deg);
+	   -moz-transform: rotate3d(0, 0, 1, 60deg);
+	        transform: rotate3d(0, 0, 1, 60deg);
 }
