@@ -1,0 +1,93 @@
+body{
+	background: #a46760;
+	text-align: center;
+}
+
+#game{
+	width: 520px;
+	height: 540px;
+	border: 1px solid #666;
+	-moz-border-radius: 10px;
+	     border-radius: 10px;
+	background:#232;
+	margin: 0 auto;
+}
+#cards{
+	width: 480px;
+	height: 540px;
+	position: relative;
+	margin: 20px;
+}
+.card{
+	-webkit-perspective: 600;
+	   -moz-perspective: 600;
+	        perspective: 600;
+	width: 105px;
+	height: 150px;
+	-webkit-transition: all 1.3s;
+	-moz-transition: all 1.3s;
+	transition: all 1.3s;
+	position: absolute;
+}
+.face{
+	width: 100%;
+	height: 100%;
+	-moz-border-radius:10px;
+	     border-radius:10px;
+	-webkit-transition-property: tansform,opacity,box-shadow;
+	-moz-transition-property: tansform,opacity,box-shadow;
+	-webkit-transition-property: tansform,opacity,-webkit-box-shadow;
+	transition-property: tansform,opacity,-webkit-box-shadow;
+	-moz-transition-property: tansform,opacity,box-shadow,-moz-box-shadow;
+	transition-property: tansform,opacity,box-shadow;
+	transition-property: tansform,opacity,box-shadow,-webkit-box-shadow,-moz-box-shadow;
+	-webkit-transition-duration: 1.3s;
+	   -moz-transition-duration: 1.3s;
+	        transition-duration: 1.3s;
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	        backface-visibility: hidden;
+}
+.front{
+	z-index: 10;
+	background:#999 url('../images/poker.jpg') -1905px -360px;
+}
+.back{
+	background: #efefef url('../images/poker.jpg');
+	z-index: 8;
+	-webkit-transform: rotate3d(0, 1, 0, -180deg);
+	   -moz-transform: rotate3d(0, 1, 0, -180deg);
+	        transform: rotate3d(0, 1, 0, -180deg);
+}
+.card:hover .face,.card-fliped.face{
+	-webkit-box-shadow: 0 0 10px #aaa;
+	   -moz-box-shadow: 0 0 10px #aaa;
+	        box-shadow: 0 0 10px #aaa;
+}
+.card-fliped .front{
+	-webkit-transform: rotate3d(0, 1, 0, 180deg);
+	   -moz-transform: rotate3d(0, 1, 0, 180deg);
+	        transform: rotate3d(0, 1, 0, 180deg);
+	z-index: 8;
+}
+.card-fliped .back{
+	-webkit-transform: rotate3d(0, 1, 0, 0deg);
+	   -moz-transform: rotate3d(0, 1, 0, 0deg);
+	        transform: rotate3d(0, 1, 0, 0deg);
+	z-index: 10;
+}
+.card-removed{
+	opacity: 0;
+}
+.cardAJ{background-position: -1470px -18px;}
+.cardAQ{background-position: -1615px -18px;}
+.cardAK{background-position: -1760px -18px;}
+.cardBJ{background-position: -1470px -188px;}
+.cardBQ{background-position: -1615px -188px;}
+.cardBK{background-position: -1760px -188px;}
+.cardCJ{background-position: -1470px -358px;}
+.cardCQ{background-position: -1615px -358px;}
+.cardCK{background-position: -1760px -358px;}
+.cardDJ{background-position: -1470px -528px;}
+.cardDQ{background-position: -1615px -528px;}
+.cardDK{background-position: -1760px -528px;}

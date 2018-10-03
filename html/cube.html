@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cube 立方体</title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	#container{
+		position: absolute;
+		width: 400px;
+		height: 400px;
+		top: 100px;
+		left: 100px;
+	}
+		.cube{
+			width: 200px;
+			height: 200px;
+			perspective: 100;
+		}
+		#item1{
+			background: red;
+		}
+		#item2{
+			background: green;
+			transform: rotateY(60deg) translate(-200px, -200px);
+		}
+		#item3{
+			background: yellow;
+			transform: rotateX(45deg);
+
+		}
+		#item4{
+			background: blue;
+		}
+		#item5{
+			background: violet;
+		}
+		#item6{
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div class="cube" id="item1">cube1</div>
+		<div class="cube" id="item2">cube2</div>
+		<div class="cube" id="item3">cube3</div>
+		<div class="cube" id="item4">cube4</div>
+		<div class="cube" id="item5">cube5</div>
+		<div class="cube" id="item6">cube6</div>
+	</div>
+	
+</body>
+</html>
