@@ -58,3 +58,8 @@ function isMatchPattern(){
 function removeTookCards(){
 	$(".card-removed").remove();
 }
+function gameOver(){
+	if($("#cards").children().length==0){
+		alert("Game Over");
+	}
+}
