@@ -1,6 +1,9 @@
 #game{
 	background: #9c9;
 	padding: 5px;
+	width: 300px;
+	height: 200px;
+	margin: 0 auto;
 }
 .card{
 	width: 105px;
@@ -26,7 +29,7 @@
 
 .front{
 	z-index: 10;
-	background-image: url('../images/bg.jpg');
+	background: url('../images/poker.jpg') -1905px -360px;
 }
 .back{
 	-webkit-transform: rotate3d(0, 1, 0, -180deg);
@@ -47,13 +50,13 @@
 	z-index: 10;
 }
 .cardAJ{
-	background: url('../images/AJ.jpg');
+	background: url('../images/poker.jpg') -1470px -18px;
 }
 .cardAQ{
-	background: url('../images/AQ.jpg');
+	background: url('../images/poker.jpg') -1615px -18px;
 }
 .cardAK{
-	background: url('../images/AK.jpg');
+	background: url('../images/poker.jpg') -1760px -18px;
 }
 
 

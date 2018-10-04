@@ -23,27 +23,21 @@ body{
 	   -moz-perspective: 600;
 	        perspective: 600;
 	width: 105px;
-	height: 150px;
-	-webkit-transition: all 1.3s;
-	-moz-transition: all 1.3s;
-	transition: all 1.3s;
+	height: 150px;	
 	position: absolute;
 }
 .face{
 	width: 100%;
 	height: 100%;
+	position: absolute;
 	-moz-border-radius:10px;
 	     border-radius:10px;
-	-webkit-transition-property: tansform,opacity,box-shadow;
-	-moz-transition-property: tansform,opacity,box-shadow;
-	-webkit-transition-property: tansform,opacity,-webkit-box-shadow;
-	transition-property: tansform,opacity,-webkit-box-shadow;
-	-moz-transition-property: tansform,opacity,box-shadow,-moz-box-shadow;
-	transition-property: tansform,opacity,box-shadow;
-	transition-property: tansform,opacity,box-shadow,-webkit-box-shadow,-moz-box-shadow;
-	-webkit-transition-duration: 1.3s;
-	   -moz-transition-duration: 1.3s;
-	        transition-duration: 1.3s;
+	-webkit-transition-property: transform,opacity,box-shadow;
+	-moz-transition-property: transform,opacity,box-shadow;
+	transition-property: transform,opacity,box-shadow;
+	-webkit-transition-duration: 1s;
+	   -moz-transition-duration: 1s;
+	        transition-duration: 1s;
 	-webkit-backface-visibility: hidden;
 	   -moz-backface-visibility: hidden;
 	        backface-visibility: hidden;
@@ -59,7 +53,7 @@ body{
 	   -moz-transform: rotate3d(0, 1, 0, -180deg);
 	        transform: rotate3d(0, 1, 0, -180deg);
 }
-.card:hover .face,.card-fliped.face{
+.card:hover .face,.card-fliped .face{
 	-webkit-box-shadow: 0 0 10px #aaa;
 	   -moz-box-shadow: 0 0 10px #aaa;
 	        box-shadow: 0 0 10px #aaa;

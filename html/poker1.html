@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Poker Demo</title>
-    <link rel="stylesheet" href="../css/matchGame.css">
+    <link rel="stylesheet" href="../css/flip.css">
 </head>
 
 <body>
@@ -16,7 +16,15 @@
         <div id="cards">
             <div class="card">
                 <div class="face front"></div>
-                <div class="face back"></div>
+                <div class="face back cardAJ"></div>
+            </div>
+            <div class="card">
+                <div class="face front"></div>
+                <div class="face back cardAQ"></div>
+            </div>
+            <div class="card">
+                <div class="face front"></div>
+                <div class="face back cardAK"></div>
             </div>
         </div>
     </section>
@@ -24,7 +32,15 @@
         <p>This is a H5 Game</p>
     </footer>
     <script src="../js/jquery.min.js"></script>
-    <script src="../js/gameMatch.js"></script>
+    <script>
+        $(function(){
+            $(".card").each(function(index){
+                $(this).click(function(){
+                    $(this).toggleClass("card-flipped");
+                })
+            })
+        })
+    </script>
 </body>
 
 </html>
